@@ -126,7 +126,6 @@ export const projects: Project[] = [
     period: "2026",
     name: "Aitemaad · اعتماد",
     tagline: "AI-assisted SME loan intelligence for Pakistan's commercial banks",
-    associated: "UBL National Innovation Hackathon 2026",
     body: [
       "Turns a 40–60 page SME loan file into a single explainable one-page memo, so a loan officer can make an auditable decision in minutes instead of weeks.",
       "Applicant side: a business owner checks their own Trust Score from real earnings through a guided web flow or a WhatsApp-first conversation, then submits to the bank.",
@@ -330,7 +329,7 @@ export const achievements = [
   {
     n: "01",
     title: "Hackathon & Competition Track Record",
-    body: "Competed in the UBL National Innovation Hackathon 2026 (building Aitemaad), the UTS 6.0 Coding Competition at the ACM UET Technical Summit, Speed Programming at XR Hackathon 3.0 hosted by Forman Christian College, and the ITEC 25 AI Web Hackathon run by UET Lahore's Department of Computer Science with the IEEE Lahore Section.",
+    body: "Built Aitemaad, an AI-integrated SME loan intelligence platform that turns a 40–60 page loan file into an explainable one-page credit memo. Also competed in the UTS 6.0 Coding Competition at the ACM UET Technical Summit, Speed Programming at XR Hackathon 3.0 hosted by Forman Christian College, and the ITEC 25 AI Web Hackathon run by UET Lahore's Department of Computer Science with the IEEE Lahore Section.",
   },
   {
     n: "02",
