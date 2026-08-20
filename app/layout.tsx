@@ -22,13 +22,14 @@ const description =
   "Muhammad Ahmad Adnan — full-stack engineer and CS undergraduate at UET Lahore. Next.js, React, Flask, FastAPI and PostgreSQL, with seven live production deployments.";
 
 /**
- * Absolute base for OG/Twitter image URLs. Vercel injects the production domain
- * at build time, so the link preview points at the real site without hardcoding
- * a domain here. Falls back to localhost for `next dev`.
+ * Canonical origin, used to build absolute OG/Twitter image URLs.
+ *
+ * Hardcoded rather than read from VERCEL_PROJECT_PRODUCTION_URL: that variable
+ * resolves to whichever domain Vercel auto-generated at build time, which put
+ * the wrong host in the link preview. NEXT_PUBLIC_SITE_URL overrides it if the
+ * domain ever changes.
  */
-const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ahmad-adnan.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -48,6 +49,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${profile.fullName} | Full-Stack Engineer`,
     description,
+    url: siteUrl,
+    siteName: profile.fullName,
     type: "website",
     locale: "en_US",
   },

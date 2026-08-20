@@ -1,5 +1,7 @@
 # Muhammad Ahmad Adnan — Portfolio
 
+**Live: https://ahmad-adnan.vercel.app**
+
 Personal portfolio site. Single page, dark editorial layout, built with Next.js 16, React 19 and Tailwind CSS v4.
 
 Live sections: Hero · About · Skills · Services · Projects · Experience · Achievements · Contact.
@@ -104,6 +106,8 @@ tools/
 
 ## Deployment
 
-Deploys to Vercel with no configuration. `metadataBase` reads `VERCEL_PROJECT_PRODUCTION_URL` at build time, so OG images resolve to the real domain automatically.
+Deployed on Vercel at **https://ahmad-adnan.vercel.app**, linked to this repo's `main` branch — every push triggers a production deploy, no configuration needed.
 
-The `@next/swc-win32-x64-msvc` entry in `optionalDependencies` is a Windows-only native binary pinned because npm skipped it during a network failure. It's marked `os: win32`, so Linux builders ignore it.
+The canonical origin for OG image URLs is set in `app/layout.tsx`. If the domain changes, either edit `siteUrl` there or set `NEXT_PUBLIC_SITE_URL` in the Vercel project's environment variables.
+
+The `@next/swc-win32-x64-msvc` entry in `optionalDependencies` is a Windows-only native binary, pinned because npm skipped it during a network failure. It's marked `os: win32`, so Linux builders ignore it.
