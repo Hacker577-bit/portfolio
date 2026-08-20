@@ -33,7 +33,17 @@ export default function OpengraphImage() {
           </div>
         </div>
 
-        <div style={{ display: "flex", fontSize: 104, fontWeight: 700, color: "#fff", lineHeight: 1.05 }}>
+        <div
+          style={{
+            display: "flex",
+            // Sized so the full three-word name fits the 1040px content box.
+            fontSize: 74,
+            fontWeight: 700,
+            color: "#fff",
+            lineHeight: 1.05,
+            letterSpacing: -1,
+          }}
+        >
           {profile.nameLead} {profile.nameTail}
         </div>
 

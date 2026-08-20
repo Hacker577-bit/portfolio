@@ -13,7 +13,7 @@ export type Segment = { text: string; bold?: boolean };
 export const profile = {
   // Hero renders `nameLead` solid and `nameTail` as an outlined word.
   fullName: "Muhammad Ahmad Adnan",
-  nameLead: "AHMAD",
+  nameLead: "MUHAMMAD AHMAD",
   nameTail: "ADNAN",
   greeting: "HI, I'M",
   tagline: "Shipping Real Software, Not Just Submissions",

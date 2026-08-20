@@ -113,11 +113,16 @@ body {
    ============================================================ */
 .hero-name {
   font-family: var(--font-display);
-  font-size: clamp(2.9rem, 11vw, 5.4rem);
+  /* Sized for the full three-word name ("MUHAMMAD AHMAD" + outlined "ADNAN").
+     Smaller ceiling than a two-word name would need, so it stays inside the
+     640px text column instead of wrapping mid-word. */
+  font-size: clamp(2.1rem, 7.6vw, 4.1rem);
   font-weight: 700;
-  line-height: 0.95;
+  line-height: 1;
   letter-spacing: 1px;
   color: #fff;
+  /* Keep each name part whole; break only between the two spans. */
+  text-wrap: balance;
 }
 
 /* Outlined second word. -webkit-text-stroke has no standard equivalent with
