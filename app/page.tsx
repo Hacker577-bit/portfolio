@@ -135,7 +135,7 @@ export default function Home() {
               </p>
 
               <h1 className="hero-name fade-up mt-2" style={{ animationDelay: "0.35s" }}>
-                {profile.nameLead} <span className="name-outline">{profile.nameTail}</span>
+                {profile.nameDisplay}
               </h1>
 
               <p

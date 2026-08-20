@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { navLinks } from "@/lib/content";
+import { navLinks, profile } from "@/lib/content";
 
 /**
  * Fixed navigation: an inline link row on desktop, a full-screen drawer on
@@ -74,10 +74,11 @@ export default function Nav() {
         <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5 sm:px-8">
           <a
             href="#hero"
-            className="font-display text-lg font-bold tracking-wide text-white"
+            className="font-display text-lg font-bold tracking-wide whitespace-nowrap text-white"
             aria-label="Back to top"
           >
-            MAA<span className="text-accent">.</span>
+            {profile.wordmark}
+            <span className="text-accent">.</span>
           </a>
 
           <nav aria-label="Primary" className="hidden md:block">

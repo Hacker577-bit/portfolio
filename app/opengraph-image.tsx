@@ -44,7 +44,7 @@ export default function OpengraphImage() {
             letterSpacing: -1,
           }}
         >
-          {profile.nameLead} {profile.nameTail}
+          {profile.nameDisplay}
         </div>
 
         <div style={{ display: "flex", fontSize: 30, letterSpacing: 6, color: "#e5e5e5", marginTop: 26 }}>

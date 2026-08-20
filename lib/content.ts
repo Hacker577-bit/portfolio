@@ -11,10 +11,11 @@
 export type Segment = { text: string; bold?: boolean };
 
 export const profile = {
-  // Hero renders `nameLead` solid and `nameTail` as an outlined word.
   fullName: "Muhammad Ahmad Adnan",
-  nameLead: "MUHAMMAD AHMAD",
-  nameTail: "ADNAN",
+  /** Hero headline. Rendered as one uniform colour — no per-word treatment. */
+  nameDisplay: "MUHAMMAD AHMAD ADNAN",
+  /** Nav wordmark, top-left. The trailing dot is styled in the accent colour. */
+  wordmark: "A Magic Man",
   greeting: "HI, I'M",
   tagline: "Shipping Real Software, Not Just Submissions",
   roles: ["FULL-STACK ENGINEER", "CS UNDERGRADUATE"],
