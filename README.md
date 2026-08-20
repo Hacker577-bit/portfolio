@@ -74,7 +74,13 @@ npm run shoot 1440 950 d     # screenshot every section, desktop
 npm run shoot 390 844 m      # ...and mobile
 ```
 
-Drives headless Chrome over the DevTools protocol and writes one PNG per section to `E:\shots`. It scrolls with real wall-clock waits, because `--virtual-time-budget` stops `IntersectionObserver` reveals from firing, and it sets a realistic viewport, because a very tall one makes `100svh` stretch the hero and push every other section off-frame. Chrome's path is hardcoded at the top of `tools/shoot.mjs`.
+Drives headless Chrome over the DevTools protocol and writes one PNG per section to `E:\shots`. Chrome's path is hardcoded at the top of `tools/shoot.mjs`.
+
+Use this rather than `chrome --headless --screenshot`, which is wrong in three ways here:
+
+- **Narrow viewports are a lie.** New headless Chrome is a real browser window, and Windows enforces a minimum window width (~500px). Ask for `--window-size=390,844` and you get a 390px *crop of a ~500px layout* — the page looks broken and clipped when it is completely fine. Only `Emulation.setDeviceMetricsOverride` sets the viewport exactly.
+- **A very tall window breaks `100svh`.** The hero is sized in `svh`, so a 9600px-tall window makes it 9600px tall and pushes every other section out of frame.
+- **`--virtual-time-budget` stops the reveals.** `IntersectionObserver` callbacks don't fire under virtual time, so every `.reveal` element screenshots at `opacity: 0` and the page looks blank. This harness scrolls with real wall-clock waits instead.
 
 ## Structure
 
